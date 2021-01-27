@@ -1,0 +1,16 @@
+it lets you create symlinks that contain environment variables
+
+1. mount dynlinkfs at /mnt/dynlinkfs
+2. use mkdynlink
+
+the syntax is like
+
+    % mkdynlink '%{HOME}%S.profile' ./link-to-current-users-profile
+    % cat ./link-to-current-users-profile # equivalent to cat "${HOME}/.profile"
+
+(replace slashes with %S, and also %p is the current pid)
+
+development status: i got this basic version working but realized it wouldn't
+work for what i was trying to do with it, so i didn't refine it any further
+
+maybe someone will find it useful or interesting regardless
